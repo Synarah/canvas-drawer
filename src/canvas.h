@@ -9,11 +9,17 @@
 
 #include <string>
 #include <vector>
+#include <cmath>
 #include "image.h"
 
 namespace agl
 {
    enum PrimitiveType {UNDEFINED, LINES, TRIANGLES};
+   struct PonAndcol{
+      int x;
+      int y; 
+      Pixel col;
+   };
    class Canvas
    {
    public:
@@ -48,6 +54,24 @@ namespace agl
 
    private:
       Image _canvas;
+      //int myh;
+      //int myw;
+      Pixel curCol;
+      Pixel bg;
+      PrimitiveType mtype;
+      PonAndcol temp;
+      std::vector<PonAndcol> vert;
+
+      void drawLine(PonAndcol a, PonAndcol b);
+      
+      void posSlo(PonAndcol a, PonAndcol b);
+
+      void negSlo(PonAndcol a, PonAndcol b);
+
+      void triDraw(PonAndcol a, PonAndcol b, PonAndcol c);
+
+      float implicit(PonAndcol p, PonAndcol p1, PonAndcol p2);
+
    };
 }
 

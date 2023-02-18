@@ -1,9 +1,4 @@
-/*-----------------------------------------------
- * Author:
- * Date:
- * Description:
- ----------------------------------------------*/
-
+// Copyright 2021, Aline Normoyle, alinen
 
 #ifndef AGL_IMAGE_H_
 #define AGL_IMAGE_H_
@@ -123,6 +118,12 @@ class Image {
   // rotate the Image 90 degrees
   Image rotate90() const;
 
+  Image blur() const;
+
+  Image extract() const;
+
+  Image boarder() const;
+
   // Return a sub-Image having the given top,left coordinate and (width, height)
   Image subimage(int x, int y, int w, int h) const;
 
@@ -195,6 +196,8 @@ class Image {
 
  private:
    // todo
+   int myw, myh, numchannels;
+   Pixel* mydata = NULL;
 };
 }  // namespace agl
 #endif  // AGL_IMAGE_H_
