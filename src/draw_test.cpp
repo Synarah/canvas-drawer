@@ -64,6 +64,52 @@ int main(int argc, char** argv)
    drawer.vertex(10, 10);
    drawer.end();
    drawer.save("quad.png");
+   
+   Canvas c(100,100);
+   c.begin(CIRCLE);
+   c.setRad(25);
+   c.color(200, 150, 100);
+   c.vertex(50, 50);
+   c.end();
+   c.save("cir.png");
+
+   Canvas r(500, 500);
+   r.begin(BURST);
+   r.color(100, 200, 200);
+   r.setRad(200);
+   r.setK(4);
+   r.setInv(0.03);
+   r.vertex(250,250);
+   r.end();
+   r.save("burst.png");
+
+   Canvas dna(500, 500);
+   dna.begin(HDNA);
+   dna.color(200, 100, 100);
+   dna.setRad(20);
+   dna.vertex(100, 250);
+   dna.vertex(400, 250);
+   dna.end();
+   dna.save("dna2.png");
+
+   Canvas rect(500,500);
+   rect.begin(SOUT);
+   rect.color(100, 200, 100);
+   rect.vertex(100, 100);
+   rect.vertex(100, 400);
+   rect.vertex(400, 400);
+   rect.vertex(400, 100);
+   rect.end();
+   rect.save("rect.png");
+
+   Canvas co(500, 500);
+   co.begin(CROUT);
+   co.vertex(250,250);
+   co.setRad(75);
+   co.end();
+   co.save("cout.png");
+   
+
 
    return 0;
 }

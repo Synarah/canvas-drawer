@@ -402,6 +402,9 @@ Image Image::bitmap(int size) const {
 }
 
 void Image::fill(const Pixel& c) {
+    for(int i = 0; i < (width() * height()); i++){
+       set(i, c);
+    }
   }
 
 }  // namespace agl

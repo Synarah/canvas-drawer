@@ -1,7 +1,9 @@
 /*-----------------------------------------------
- * Author:
- * Date:
- * Description:
+ * Author: Synarah Sitaf
+ * Date: 2/22/2023
+ * Description: It's the base class where all the
+ * functions are created and then they are all 
+ * used and filled in canvas.cpp
  ----------------------------------------------*/
 
 #ifndef canvas_H_
@@ -14,7 +16,7 @@
 
 namespace agl
 {
-   enum PrimitiveType {UNDEFINED, LINES, TRIANGLES};
+   enum PrimitiveType {UNDEFINED, LINES, TRIANGLES, CIRCLE, BURST, HDNA, SOUT, CROUT};
    struct PonAndcol{
       int x;
       int y; 
@@ -49,8 +51,27 @@ namespace agl
       // Specify a color. Color components are in range [0,255]
       void color(unsigned char r, unsigned char g, unsigned char b);
 
+
+      void starDraw(PonAndcol s);
+
       // Fill the canvas with the given background color
       void background(unsigned char r, unsigned char g, unsigned char b);
+
+      void cir(PonAndcol p);
+
+      void setRad(int r);
+
+      void setInv(float i);
+
+      void setK(float k);
+
+      void burst(PonAndcol c);
+
+      void DNA(PonAndcol l, PonAndcol r);
+
+      void sqOutline(PonAndcol a, PonAndcol b, PonAndcol c, PonAndcol d);
+
+      void cOut(PonAndcol p);
 
    private:
       Image _canvas;
@@ -61,6 +82,9 @@ namespace agl
       PrimitiveType mtype;
       PonAndcol temp;
       std::vector<PonAndcol> vert;
+      float k;
+      float inv;
+      int r;
 
       void drawLine(PonAndcol a, PonAndcol b);
       
@@ -71,6 +95,8 @@ namespace agl
       void triDraw(PonAndcol a, PonAndcol b, PonAndcol c);
 
       float implicit(PonAndcol p, PonAndcol p1, PonAndcol p2);
+
+      
 
    };
 }
