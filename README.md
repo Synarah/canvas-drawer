@@ -48,6 +48,7 @@ canvas-drawer/build $ ../bin/draw_art
 ## Supported primitives
 
 TODO: Document the custom primitives supported by your canvas class
+
 <img width="308" alt="Screenshot 2023-04-18 at 10 47 36 PM" src="https://user-images.githubusercontent.com/112510953/232954568-465c3eb5-f82f-477f-a65c-20a7396770da.png">
 
 <img width="311" alt="Screenshot 2023-04-18 at 10 48 15 PM" src="https://user-images.githubusercontent.com/112510953/232954586-96ed4a31-1cda-45f1-a460-7a8af5a804d5.png">
